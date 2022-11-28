@@ -19,3 +19,12 @@ CREATE TABLE team(
     DivisionWins    INT         NULL,
     CONSTRAINT      teamPK      PRIMARY KEY(TeamName)
 );
+
+CREATE TABLE location(
+    Stadium     VARCHAR(100)    NOT NULL,
+    City        CHAR(50)        NOT NULL,
+    State       CHAR(50)        NOT NULL,
+    CONSTRAINT  locationPK      FOREIGN KEY(Stadium)
+                                    REFERENCES team(Stadium)
+    );
+    
