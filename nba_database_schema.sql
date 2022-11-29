@@ -4,29 +4,15 @@
 /* Jack Ahmed, Sean Sautner, Chris Leonard, Diego Messmacher
 /******************************************************************************/
 
-create table team (
-    team_name    varchar(20)     not null,
-    wins        int     not null,
-    losses      int     not null,
-    conf_seed           int         not null,
-    made_playoffs       bit(1)      default null,
-    won_conference      bit(1)      default null,
-    won_campionship     bit(1)      default null,
-    total_championships    int      not null,
-    divname     varchar(20)     not null,
-    stadium     varchar(60)     not null,
-    coachID     int     not null,
-    playerID    int     not null,
-    managerID   int     not null,
-    ownerID     int     not null,
-    constraint  teamPK      primary key(team_name),
-    constraint  locationFK  foreign key(stadium) references location(stadium),
-    constraint  playerFK    foreign key(playerID) references best_player(player_id),
-    constraint  coachFK     foreign key(coachID) references coach(coach_id),
-    constraint  divFK       foreign key(divname) references division(name),
-    constraint  mangFK      foreign key(managerID) references manager(manager_id),
-    constraint  ownFK       foreign key(ownerID)   references owner(ownder_id)
-);
+drop table team cascade CONSTRAINTS;
+drop table location cascade CONSTRAINTS;
+drop table division cascade CONSTRAINTS;
+drop table coach cascade CONSTRAINTS;
+drop table best_player cascade CONSTRAINTS;
+drop table award cascade CONSTRAINTS;
+drop table manager cascade CONSTRAINTS;
+drop table owner cascade CONSTRAINTS;
+
 
 create table location (
     stadium         varchar(60)     not null,
@@ -38,7 +24,7 @@ create table location (
 );
 
 create table division (
-    name     varchar(20)     not null,
+    divname     varchar(20)     not null,
     conference  char(7)         not null,
     constraint divPK primary key(divname)
 );
@@ -70,7 +56,7 @@ create table award (
     award_name    varchar(15)     not null,
     player_id   int     not null,
     constraint awardPK primary key(award_name, player_id),
-    constraint playerFK foreign key(player_id) references best_player(ID)
+    constraint playerFK foreign key(player_id) references best_player(player_id)
 );
 
 create table manager (
@@ -85,4 +71,29 @@ create table owner (
     owner_name  varchar(50)     not null,
     start_date  date,
     constraint  ownerPK     primary key(owner_id)
+);
+
+
+create table team (
+    team_name    varchar(20)     not null,
+    wins        int     not null,
+    losses      int     not null,
+    conf_seed           int         not null,
+    made_playoffs       INT,
+    won_conference      INT,
+    won_campionship     int,
+    total_championships    int      not null,
+    divname     varchar(20)     not null,
+    stadium     varchar(60)     not null,
+    coachID     int     not null,
+    playerID    int     not null,
+    managerID   int     not null,
+    ownerID     int     not null,
+    constraint  teamPK      primary key(team_name),
+    constraint  locationFK  foreign key(stadium) references location(stadium),
+    constraint  bestPlayerFK    foreign key(playerID) references best_player(player_id),
+    constraint  coachFK     foreign key(coachID) references coach(coach_id),
+    constraint  divFK       foreign key(divname) references division(divname),
+    constraint  mangFK      foreign key(managerID) references manager(manager_id),
+    constraint  ownFK       foreign key(ownerID)   references owner(owner_id)
 );
