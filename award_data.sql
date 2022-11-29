@@ -16,4 +16,4 @@ INSERT INTO award VALUES('FinalsMVP', 10);
 INSERT INTO award VALUES('MostImprovedPlayer', 15);
 
 -- All other awards not by team's best players
-select * from award;
+--select * from award;
