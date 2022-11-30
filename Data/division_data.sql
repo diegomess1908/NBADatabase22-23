@@ -6,18 +6,16 @@
 
 -- divname, conference 
 
-delete from division;
+INSERT INTO division VALUES('Atlantic', 'east');
 
-INSERT INTO division VALUES('atlantic', 'east');
+INSERT INTO division VALUES('Central', 'east');
 
-INSERT INTO division VALUES('central', 'east');
+INSERT INTO division VALUES('Southeast', 'east');
 
-INSERT INTO division VALUES('southeast', 'east');
+INSERT INTO division VALUES('Pacific', 'west');
 
-INSERT INTO division VALUES('pacific', 'west');
+INSERT INTO division VALUES('Northwest', 'west');
 
-INSERT INTO division VALUES('northwest', 'west');
-
-INSERT INTO division VALUES('southwest', 'west');
+INSERT INTO division VALUES('Southwest', 'west');
 
 -- select * from division;

@@ -1,12 +1,13 @@
 /******************************************************************************/
-/* NBA Database - _______ Data
+/* NBA Database - Location Data
 /* CSC 4480_001
 /* Jack Ahmed, Sean Sautner, Chris Leonard, Diego Messmacher
 /******************************************************************************/
 
 -- stadium, city, avg_attendance, team_location
 
-delete from location;
+-- to update
+delete from location where avg_attendance > 0;
 
 -- Atlanta Hawks
 INSERT INTO location VALUES('State Farm Arena', 'Atlanta', 16408, 'Atalnta, GA');
@@ -39,13 +40,13 @@ INSERT INTO location VALUES('Little Caesars Arena', 'Detroit', 16184, 'Detroit, 
 INSERT INTO location VALUES('Chase Center', 'San Francisco', 18064, 'Bay Area, CA');
 
 -- Houston Rockets
-INSERT INTO location VALUES('Toytoa Center', 'Houston', 15584, 'Houston, TX');
+INSERT INTO location VALUES('Toyota Center', 'Houston', 15584, 'Houston, TX');
 
 -- Inidana Pacers
 INSERT INTO location VALUES('Gainbridge Fieldhouse', 'Indianapolis', 14395, 'Indianapolis, IN');
 
 -- LA Clippers / LA Lakers
-INSERT INTO location VALUES('Cyrpto.com Arena', 'Los Angeles', 18649, 'Los Angeles, CA');
+INSERT INTO location VALUES('Crypto com Arena', 'Los Angeles', 18649, 'Los Angeles, CA');
 
 -- Memphis Grizzlies
 INSERT INTO location VALUES('FedEx Forum', 'Memphis', 15775, 'Memphis, TN');
@@ -90,9 +91,9 @@ INSERT INTO location VALUES('ATT Center', 'San Antonio', 15041, 'San Antonio, TX
 INSERT INTO location VALUES('Scotiabank Arena', 'Toronto', 18873, 'Toronto, Canada');
 
 -- Utah Jazz
-INSERT INTO location VALUES('vivint Arena', 'Salt Lake City', 18306, 'Salt Lake City, UT');
+INSERT INTO location VALUES('Vivint Arena', 'Salt Lake City', 18306, 'Salt Lake City, UT');
 
 -- Washington Wizards
-INSERT INTO location VALUES('Captial One Arena', 'Washington DC', 15541, 'Washington DC');
+INSERT INTO location VALUES('Capital One Arena', 'Washington DC', 15541, 'Washington DC');
 
 --select * from location;

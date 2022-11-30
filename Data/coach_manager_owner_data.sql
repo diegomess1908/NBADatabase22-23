@@ -4,10 +4,6 @@
 /* Jack Ahmed, Sean Sautner, Chris Leonard, Diego Messmacher
 /******************************************************************************/
 
-delete from coach;
-delete from manager;
-delete from owner;
-
 -- Atlanta Hawks
 INSERT INTO coach VALUES(1, 'Nate McMillan', 2021);
 INSERT INTO manager VALUES(1, 'Travis Schlenk', 2016);
