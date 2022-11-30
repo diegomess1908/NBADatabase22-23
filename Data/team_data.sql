@@ -98,4 +98,4 @@ INSERT INTO team VALUES('Jazz', 49, 33, 5, 1, 0, 0, 0, 'Northwest', 'Vivint Aren
 -- Washington Wizards
 INSERT INTO team VALUES('Wizards', 35, 47, 12, 0, 0, 0, 1, 'Southeast', 'Capital One Arena', 30, 30, 30, 30);
 
-select * from team;
+-- select * from team;
