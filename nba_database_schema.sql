@@ -33,7 +33,7 @@ create table division (
 create table coach (
     coach_id     int     not null,
     coach_name    varchar(60)     not null,
-    start_date  date,
+    start_date   float(4),
     constraint coachPK primary key(coach_id)
 );
 
@@ -61,14 +61,14 @@ create table award (
 create table manager (
     manager_id      int         not null,
     manager_name    varchar(50) not null,
-    start_date      date,
+    start_date      float(4),
     constraint      managerPK   primary key(manager_id)
 );
 
 create table owner (
     owner_id   int     not null,
     owner_name  varchar(50)     not null,
-    start_date  date,
+    start_date  float(4),
     constraint  ownerPK     primary key(owner_id)
 );
 
