@@ -48,12 +48,11 @@ create table best_player (
     college_nation     varchar(100)    not null,
     draft_pick      int     not null,
     draft_year      int     not null,
-    award_won       varchar(50) default null,
     constraint playerPK primary key(player_id)
 );
 
 create table award (
-    award_name    varchar(15)     not null,
+    award_name    varchar(20)     not null,
     player_id   int     not null,
     constraint awardPK primary key(award_name, player_id),
     constraint playerFK foreign key(player_id) references best_player(player_id)
@@ -79,9 +78,9 @@ create table team (
     wins        int     not null,
     losses      int     not null,
     conf_seed           int         not null,
-    made_playoffs       INT,
-    won_conference      INT,
-    won_campionship     int,
+    made_playoffs       char(1),
+    won_conference      char(1),
+    won_campionship     char(1),
     total_championships    int      not null,
     divname     varchar(20)     not null,
     stadium     varchar(60)     not null,
