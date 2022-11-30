@@ -16,10 +16,9 @@ drop table owner cascade CONSTRAINTS;
 
 create table location (
     stadium         varchar(60)     not null,
-    address         varchar(60)     not null,
-    city            varchar(20)     not null,
-    state           char(2)         not null,
+    city            varchar(60)     not null,
     avg_attendance  int             not null,
+    team_location   varchar(60)     not null,
     constraint      locationPK      primary key(stadium)
 );
 
@@ -33,7 +32,7 @@ create table division (
 create table coach (
     coach_id     int     not null,
     coach_name    varchar(60)     not null,
-    start_date   float(4),
+    start_date   int,
     constraint coachPK primary key(coach_id)
 );
 
@@ -61,14 +60,14 @@ create table award (
 create table manager (
     manager_id      int         not null,
     manager_name    varchar(50) not null,
-    start_date      float(4),
+    start_date      int,
     constraint      managerPK   primary key(manager_id)
 );
 
 create table owner (
     owner_id   int     not null,
     owner_name  varchar(50)     not null,
-    start_date  float(4),
+    start_date  int,
     constraint  ownerPK     primary key(owner_id)
 );
 
