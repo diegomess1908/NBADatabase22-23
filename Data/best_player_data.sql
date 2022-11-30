@@ -4,7 +4,7 @@
 /* Jack Ahmed, Sean Sautner, Chris Leonard, Diego Messmacher
 /******************************************************************************/
 
-delete from best_player;
+delete from best_player where player_id > 0;
 
 -- INSERT INTO best_player VALUES(name, player_id, position, ppg, rpg, apg, college_nation, draft_pick, draft_year, award_won)
 

@@ -3,9 +3,6 @@
 /* CSC 4480_001
 /* Jack Ahmed, Sean Sautner, Chris Leonard, Diego Messmacher
 /******************************************************************************/
-
-delete from award;
-
 -- Nikola Jokic, MVP
 INSERT INTO award VALUES('MVP', 8);
 
