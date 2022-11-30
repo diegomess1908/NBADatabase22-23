@@ -1,0 +1,65 @@
+/******************************************************************************/
+/* NBA Database - _______ Data
+/* CSC 4480_001
+/* Jack Ahmed, Sean Sautner, Chris Leonard, Diego Messmacher
+/******************************************************************************/
+
+-- Atlanta Hawks
+
+-- Boston Celtics
+
+-- Brooklyn Nets
+
+-- Charlotte Hornets
+
+-- Chicago Bulls
+
+-- Cleveland Cavaliers
+
+-- Dallas Mavericks
+
+-- Denver Nuggets
+
+-- Detriot Pistons
+
+-- Golden State Warriors
+
+-- Houston Rockets
+
+-- Inidana Pacers
+
+-- LA Clippers
+
+-- LA Lakers
+
+-- Memphis Grizzlies
+
+-- Miami Heat
+
+-- Milwaukee Bucks
+
+-- Minnestoa Timberwolves
+
+-- New Orleans Pelicans
+
+-- New York Knicks
+
+-- Oklahoma City Thunder
+
+-- Orlando Magic
+
+-- Philadelphia 76ers
+
+-- Phoenix Suns
+
+-- Portland Trailbalzers
+
+-- Sacramento Kings
+
+-- San Antonio Spurs
+
+-- Toronto Raptors
+
+-- Utah Jazz
+
+-- Washington Wizards
