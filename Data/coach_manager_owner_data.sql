@@ -158,6 +158,7 @@ INSERT INTO coach VALUES(30, 'Wes Unseld Jr.', 2021);
 INSERT INTO manager VALUES(30, 'Tommy Sheppard', 2018);
 INSERT INTO owner VALUES(30, 'Ted Leonsis', 2010);
 
-select * from coach;
-select * from manager;
-select * from owner;
+-- for testing
+--select * from coach;
+--select * from manager;
+--select * from owner;
