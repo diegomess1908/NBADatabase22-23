@@ -79,7 +79,7 @@ create table team (
     conf_seed           int         not null,
     made_playoffs       char(1),
     won_conference      char(1),
-    won_campionship     char(1),
+    won_championship     char(1),
     total_championships    int      not null,
     divname     varchar(20)     not null,
     stadium     varchar(60)     not null,
