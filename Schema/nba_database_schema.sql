@@ -12,6 +12,7 @@ drop table best_player cascade CONSTRAINTS;
 drop table award cascade CONSTRAINTS;
 drop table manager cascade CONSTRAINTS;
 drop table owner cascade CONSTRAINTS;
+drop table all_star cascade CONSTRAINTS;
 
 
 create table location (
@@ -87,6 +88,7 @@ create table best_player (
     college_nation     varchar(100)    not null,
     draft_pick      int     not null,
     draft_year      int     not null,
+    all_star_selections int default 0,
     constraint playerPK primary key(player_id),
     constraint teamFK   foreign key(teamID) references team(team_name)
 );
@@ -96,4 +98,10 @@ create table award (
     player_id   int     not null,
     constraint awardPK primary key(award_name, player_id),
     constraint playerFK foreign key(player_id) references best_player(player_id)
+);
+
+create table all_star (
+    playerID_AS     int         not null,
+    selection_year  varchar(4)  not null,
+    constraint  playerFK_AS foreign key(playerID_AS) references best_player(player_id)
 );
