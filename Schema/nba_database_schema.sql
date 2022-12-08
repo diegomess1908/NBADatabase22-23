@@ -13,6 +13,7 @@ drop table award cascade CONSTRAINTS;
 drop table manager cascade CONSTRAINTS;
 drop table owner cascade CONSTRAINTS;
 drop table all_star cascade CONSTRAINTS;
+drop table trade cascade CONSTRAINTS;
 
 
 create table location (
@@ -105,3 +106,10 @@ create table all_star (
     selection_year  varchar(4)  not null,
     constraint  playerFK_AS foreign key(playerID_AS) references best_player(player_id)
 );
+
+create table trade (
+    player_id   int     not null,
+    old_team    varchar(20)     not null,
+    new_team    varchar(20)     not null,
+    constraint  tradedPlayer    foreign key(player_id)  references best_player(player_id)
+    );

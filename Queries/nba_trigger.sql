@@ -8,6 +8,8 @@ select * from best_player;
 select * from team;
 select * from award;
 select * from all_star;
+select * from trade;
+delete from trade;
 
 create or replace trigger ALLSTARGAME
 after insert on all_star
@@ -26,3 +28,28 @@ from best_player
 where all_star_selections > 0;
 
 select * from all_star;
+
+create or replace trigger  PLAYERTRADE
+after insert on trade
+for each row
+    begin
+        update best_player SET teamID = :NEW.new_team
+        where player_id = :NEW.player_id;
+    end;
+    /
+--before trade
+select teamID, name, player_id
+from best_player
+where player_id = 1;
+
+--trade
+insert into trade values(1, 'Magic', 'Hawks');
+
+--after trade
+select teamID, name, player_id
+from best_player
+where player_id = 1;
+
+select *
+from best_player
+where teamID = 'Magic';
