@@ -37,14 +37,17 @@ ORDER BY start_date DESC;
 -- ppg
 SELECT best_player.name, ppg
 FROM best_player
-ORDER BY ppg DESC;
+ORDER BY ppg DESC
+FETCH first 5 rows only;
 
 -- rpg
 SELECT best_player.name, rpg
 FROM best_player
-ORDER BY rpg DESC;
+ORDER BY rpg DESC
+FETCH first 5 rows only;
 
 -- apg
 SELECT best_player.name, apg
 FROM best_player
-ORDER BY apg DESC;
+ORDER BY apg DESC
+FETCH first 5 rows only;
