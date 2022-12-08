@@ -51,3 +51,11 @@ SELECT best_player.name, apg
 FROM best_player
 ORDER BY apg DESC
 FETCH first 5 rows only;
+
+-- Which Position Scores the Most
+select position, round(avg(ppg),2) as avg_points, 
+round(avg(rpg), 2) as avg_rebounds, 
+round(avg(apg), 2) as avg_assists
+from best_player
+group by position
+order by avg_points desc;
