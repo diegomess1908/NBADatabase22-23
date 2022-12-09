@@ -1,6 +1,6 @@
 -- Best player on each team 
 SELECT t.team_name, p.name FROM team t , best_player p 
-WHERE t.playerid = p.player_id;
+WHERE t.team_name = p.teamID;
 
 -- Count of best players by college (ordered by number of players)
 SELECT college_nation, COUNT(college_nation) as num_best_players FROM best_player
