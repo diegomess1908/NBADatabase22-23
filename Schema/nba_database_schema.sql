@@ -115,6 +115,7 @@ create table trade (
     );
     
 create table freeagent (
+    team_signed varchar(20) not null,
     name    varchar(100)    not null,
     player_id      int     not null,
     position    varchar(2)     not null,
@@ -131,5 +132,5 @@ create table freeagent (
 create table fasign (
     player_id    int    not null,
     team_signed  varchar(20) not null,
-    constraint playerSigned   foreign key(player_id) references freeagent(player_id)
+    constraint playerSigned   primary key(player_id)
     );
