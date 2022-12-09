@@ -113,3 +113,24 @@ create table trade (
     new_team    varchar(20)     not null,
     constraint  tradedPlayer    foreign key(player_id)  references best_player(player_id)
     );
+    
+create table freeagent (
+    name    varchar(100)    not null,
+    player_id      int     not null,
+    position    varchar(2)     not null,
+    ppg     float(50)       not null,
+    rpg     float(50)       not null,
+    apg     float(50)       not null,
+    college_nation     varchar(100)    not null,
+    draft_pick      int     not null,
+    draft_year      int     not null,
+    all_star_selections int default 0,
+    constraint FAplayerPK primary key(player_id)
+    );
+    
+create table fasign (
+    player_id    int    not null,
+    team_signed  varchar(20) not null,
+    constraint playerSigned   foreign key(player_id) references freeagent(player_id)
+    );
+    
