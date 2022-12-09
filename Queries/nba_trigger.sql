@@ -43,13 +43,13 @@ from best_player
 where player_id = 1;
 
 --trade
-insert into trade values(1, 'Magic', 'Hawks');
+insert into trade values(1, 'Hawks', '76ers');
 
 --after trade
 select teamID, name, player_id
 from best_player
-where player_id = 1;
+where teamID = '76ers';
 
 select *
 from best_player
-where teamID = 'Magic';
+where teamID = '76ers';
