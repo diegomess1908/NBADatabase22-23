@@ -134,3 +134,24 @@ create table fasign (
     team_signed  varchar(20) not null,
     constraint playerSigned   primary key(player_id)
     );
+    
+create table teamstats(
+    team_name varchar(20) not null,
+    gp int not null,
+    fg int not null,
+    fga int not null,
+    thpm int not null,
+    thpa int not null,
+    ftm int not null,
+    fta int not null,
+    orb int not null,
+    drb int not null,
+    trb int not null,
+    ast int not null,
+    stl int not null,
+    blk int not null,
+    tov int not null,
+    pts int not null,
+    
+    constraint teamName foreign key(Team_name) references team
+);
