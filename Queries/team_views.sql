@@ -83,7 +83,11 @@ create view Pacific as select * from team
 create view Southwest as select * from team 
     where divname = 'Southwest';
 
+drop view employee_groups;
+
 -- View for team employees
-create view employee_groups as select c.coach_name, m.manager_name, o.owner_name, t.team_name
+create view employee_groups as select  t.team_name, c.coach_name, m.manager_name, o.owner_name
     from coach c, manager m, owner o, team t
     where t.coachID = c.coach_id and t.ownerID = o.owner_id and t.managerID = m.manager_id;
+    
+select * from employee_groups;

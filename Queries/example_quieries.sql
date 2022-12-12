@@ -16,7 +16,7 @@ FROM (best_player p INNER JOIN
 (team t INNER JOIN coach c ON t.coachid = c.coach_id)
 ON m.manager_id = t.managerid)
 ON o.owner_id = t.ownerid)
-ON p.player_id = t.playerid)
+ON p.teamID = t.team_name)
 where t.won_championship = 1;
 
 -- Avg attendance of teams making the playoffs versus those not (rounded to 
@@ -25,6 +25,11 @@ SELECT t.made_playoffs, ROUND(AVG(avg_attendance), 0) AS avg_avg_attendance
 FROM team t, location l
 WHERE t.stadium = l.stadium
 GROUP BY t.made_playoffs;
+
+-- Correlation
+SELECT ROUND(CORR(t.conf_seed, l.avg_attendance), 4) as Correlation
+FROM team t, location l
+WHERE t.stadium = l.stadium;
 
 -- Team performance variables and the tenure of their coaches
 SELECT t.team_name, ROUND(t.wins/t.losses, 3) AS win_loss_ratio, 

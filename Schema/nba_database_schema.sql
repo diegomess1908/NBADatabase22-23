@@ -14,6 +14,9 @@ drop table manager cascade CONSTRAINTS;
 drop table owner cascade CONSTRAINTS;
 drop table all_star cascade CONSTRAINTS;
 drop table trade cascade CONSTRAINTS;
+drop table freeagent cascade CONSTRAINTS;
+drop table fasign cascade CONSTRAINTS;
+drop table teamstats cascade CONSTRAINTS;
 
 
 create table location (
