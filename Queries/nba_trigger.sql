@@ -43,13 +43,40 @@ from best_player
 where player_id = 1;
 
 --trade
-insert into trade values(1, 'Magic', 'Hawks');
+insert into trade values(1, 'Hawks', '76ers');
 
 --after trade
 select teamID, name, player_id
 from best_player
-where player_id = 1;
+where teamID = '76ers';
 
 select *
 from best_player
-where teamID = 'Magic';
+where teamID = '76ers';
+
+--Free agent signing
+create or replace trigger  FREEAGENTSIGNING
+after insert on fasign
+for each row
+    begin
+        update freeagent SET team_signed = :NEW.team_signed
+        where player_id = :NEW.player_id;
+        INSERT INTO best_player(teamID,name,player_id,position,ppg,rpg,apg,college_nation,draft_pick,draft_year,all_star_selections)
+            SELECT t1.team_signed, t1.name, t1.player_id,t1.position,t1.ppg,t1.rpg,t1.apg, t1.college_nation, t1.draft_pick,t1.draft_year, t1.all_star_selections
+            FROM freeagent t1
+            WHERE t1.player_id = :NEW.player_id;
+        delete from freeagent where player_id = :NEW.player_id;
+    end;
+    /
+--before signing
+select name, player_id from freeAgent;
+
+-- Free agent signing
+insert into fasign values(31, 'Heat');
+
+--after signing
+select teamID, name, player_id
+from best_player
+where player_id = 31;
+
+select name, player_id from freeAgent;
